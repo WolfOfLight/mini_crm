@@ -1,0 +1,12 @@
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
+const app = express();
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+const buf = process.env;
+const port = buf.SECRET_PORT;
+app.use(cors());
+app.use(express.json());
+app.listen(port, ()=>{console.log('Serveur lancé sur http://localhost:$(port)')});
